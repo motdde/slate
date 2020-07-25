@@ -65,6 +65,9 @@ import {
   OL,
   LI,
 } from "~/components/system/components/Typography";
+import { SiteNav } from "~/components/system/components/SiteNav";
+import { SiteFooter } from "~/components/system/components/SiteFooter";
+
 
 // NOTE(jim): Fragments
 import { Boundary } from "~/components/system/components/fragments/Boundary";
@@ -127,6 +130,8 @@ export {
   UL,
   OL,
   LI,
+  SiteNav,
+  SiteFooter,
   // NOTE(jim): Fragments, not meant to be used.
   Boundary,
   TooltipAnchor,

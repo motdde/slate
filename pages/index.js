@@ -1,4 +1,6 @@
 import * as React from "react";
+import * as System from "~/components/system";
+
 import * as Constants from "~/common/constants";
 import * as Actions from "~/common/actions";
 
@@ -7,34 +9,28 @@ import { css } from "@emotion/react";
 import WebsitePrototypeWrapper from "~/components/core/WebsitePrototypeWrapper";
 
 const STYLES_ROOT = css`
-  padding: 128px 88px 256px 88px;
+  width:80%;
+  margin-left:auto;
+  margin-right:auto;
+`;
 
-  @media (max-width: 768px) {
-    padding: 128px 24px 128px 24px;
+const STYLES_HERO = css`
+  font-style: normal;
+  font-weight: normal;
+  font-size: 56px;
+  line-height: 160%;
+  }
+`;
+const STYLES_FEATURES = css`
+  margin: 55px 0px;
+
+
+
+  
   }
 `;
 
-const STYLES_HEADING = css`
-  font-weight: 400;
-  font-size: 2.88rem;
-  line-height: 1.5;
-  color: ${Constants.system.black};
 
-  @media (max-width: 768px) {
-    font-size: 1rem;
-  }
-`;
-
-const STYLES_PARAGRAPH = css`
-  font-weight: 400;
-  font-size: 2.88rem;
-  line-height: 1.5;
-  color: ${Constants.system.pitchBlack};
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
-  }
-`;
 
 export const getServerSideProps = async (context) => {
   return {
@@ -61,21 +57,61 @@ export default class IndexPage extends React.Component {
         url={url}
       >
         <div css={STYLES_ROOT}>
-          <h1 css={STYLES_HEADING}>Slate</h1>
-          <p css={STYLES_PARAGRAPH}>
-            One place for all of your assets. Powered by{" "}
-            <a href="https://docs.textile.io/">Textile</a> and{" "}
-            <a href="https://filecoin.io/">Filecoin</a>.
-            <br />
-            <br />
-            <a href="/application">Run Slate {Constants.values.version}</a>
-            <br />
-            <a href="/system">Use Slate's Design System</a>
-            <br />
-            <a href="https://github.com/filecoin-project/slate">
-              View Source ☺
-            </a>
-          </p>
+        <System.SiteNav />
+
+        <section css={STYLES_HERO}>
+          <System.H1>Store your files, turn them into collections, and share them with the world — with Slate.</System.H1>
+          <br/>
+          
+          <System.H1><a>Store files -></a></System.H1>
+        </section>
+
+        <section css={STYLES_FEATURES}>
+          <System.H3>Store Files</System.H3>
+          <System.P>Slate is the first decentralized storage system made for everyone. Use slate to store:</System.P>
+          <div>
+            <System.UL>
+              <System.LI>Cloud</System.LI>
+              <System.LI>Cake</System.LI>
+              <System.LI>Rainbow</System.LI>
+            </System.UL>
+          </div>
+          <div>
+            <p>Assets will go here</p>
+          </div>
+        </section>
+
+        <section css={STYLES_FEATURES}>
+          <System.H3>Create Slates</System.H3>
+          <System.P>Organize and store your files into shareable collections. </System.P>
+          <div>
+            <System.UL>
+              <System.LI>Cloud</System.LI>
+              <System.LI>Cake</System.LI>
+              <System.LI>Rainbow</System.LI>
+            </System.UL>
+          </div>
+          <div>
+            <p>Assets will go here</p>
+          </div>
+        </section>
+
+        <section css={STYLES_FEATURES}>
+          <System.H3>Share Them</System.H3>
+          <System.P>Organize and store your files into shareable collections</System.P>
+          <div>
+            <System.UL>
+              <System.LI>Cloud</System.LI>
+              <System.LI>Cake</System.LI>
+              <System.LI>Rainbow</System.LI>
+            </System.UL>
+          </div>
+          <div>
+            <p>Assets will go here</p>
+          </div>
+        </section>
+     
+        <System.SiteFooter />
         </div>
       </WebsitePrototypeWrapper>
     );
